@@ -1,12 +1,13 @@
 'format cjs';
 
-var engine = require('./engine');
-var conventionalCommitTypes = require('conventional-commit-types');
-var configLoader = require('commitizen').configLoader;
+const engine = require('./engine');
+const types = require('./type.json');
+const configLoader = require('commitizen').configLoader;
+const getCzTypesConfig = require('./get-custom-config').getCzTypesConfig;
+const config = configLoader.load() || {};
 
-var config = configLoader.load() || {};
-var options = {
-  types: config.types || conventionalCommitTypes.types,
+const options = {
+  types: getCzTypesConfig(types),
   defaultType: process.env.CZ_TYPE || config.defaultType,
   defaultScope: process.env.CZ_SCOPE || config.defaultScope,
   defaultSubject: process.env.CZ_SUBJECT || config.defaultSubject,
@@ -28,10 +29,10 @@ var options = {
 
 (function(options) {
   try {
-    var commitlintLoad = require('@commitlint/load');
+    const commitlintLoad = require('@commitlint/load');
     commitlintLoad().then(function(clConfig) {
       if (clConfig.rules) {
-        var maxHeaderLengthRule = clConfig.rules['header-max-length'];
+        const maxHeaderLengthRule = clConfig.rules['header-max-length'];
         if (
           typeof maxHeaderLengthRule === 'object' &&
           maxHeaderLengthRule.length >= 3 &&

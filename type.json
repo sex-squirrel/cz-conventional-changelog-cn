@@ -1,0 +1,254 @@
+{
+  "✨ feat": {
+    "description": "一个新功能的提交",
+    "title": "Features（功能）"
+  },
+  "💄 ui": {
+    "description": "更新UI/样式文件",
+    "name": "ui"
+  },
+  "🐛 fix": {
+    "description": "一次修复问题的提交",
+    "title": "Bug Fixes（修复）"
+  },
+  "🚑 quickfix": {
+    "description": "至关重要的更新补丁",
+    "name": "quickfix（紧急修复）"
+  },
+  "🚧 wip": {
+    "description": "工作正在进行中",
+    "name": "wip（未完成）"
+  },
+  "🏷️  types": {
+    "description": "增加/变更类型文件(Flow, TypeScript)",
+    "name": "types"
+  },
+  "💡 docs-code": {
+    "description": "为源码添加注释",
+    "name": "docs-code"
+  },
+  "👌 review": {
+    "description": "由代码审查引起的代码更新提交",
+    "name": "review（审查）"
+  },
+  "🚸 ux": {
+    "description": "改善用户体验和可用性",
+    "name": "ux"
+  },
+  "📱 responsive": {
+    "description": "响应式设计相关工作",
+    "name": "responsive"
+  },
+  "♿️ access": {
+    "description": "提高可访问性(为更多的不同类型的用户提供服务)",
+    "name": "access"
+  },
+  "📈 analytics": {
+    "description": "添加分析/追踪/埋点代码",
+    "name": "analytics（分析）"
+  },
+  "💚 fix-ci": {
+    "description": "修复流水线构建",
+    "name": "fix-ci（流水线修复）"
+  },
+  "🚨 lint": {
+    "description": "移除lint检查的警告/错误",
+    "name": "lint（代码检查）"
+  },
+  "🔧 config": {
+    "description": "更改配置文件",
+    "name": "config"
+  },
+  "🔒 security": {
+    "description": "修复安全性问题",
+    "name": "security（安全性）"
+  },
+  "🍎 osx": {
+    "description": "修复在macOS上的问题",
+    "name": "osx"
+  },
+  "🐧 linux": {
+    "description": "修复在Linux上的问题",
+    "name": "linux"
+  },
+  "🏁 windows": {
+    "description": "修复在Windows上的问题",
+    "name": "windows"
+  },
+  "🤖 android": {
+    "description": "修复在Android上的问题",
+    "name": "android"
+  },
+  "🍏 ios": {
+    "description": "修复在iOS上的问题",
+    "name": "ios"
+  },
+  "🔖 release": {
+    "description": "发行/版本tag提交",
+    "name": "release"
+  },
+  "✂️  prune": {
+    "description": "移除代码或者文件",
+    "name": "prune（精简）"
+  },
+  "📝 docs": {
+    "description": "只有文档/注释的修改提交",
+    "title": "Documentation（文档）"
+  },
+  "✏️  typo": {
+    "description": "错别字更正",
+    "name": "typo（错别字）"
+  },
+  "🎨 style": {
+    "description": "美化代码的提交 (空格, 格式化, 缺少的分号, 等等)",
+    "title": "Styles（格式）"
+  },
+  "💥 breaking": {
+    "description": "一个不兼容/重大的更新",
+    "name": "Breaking Update (不兼容/重大)"
+  },
+  "♻️  refactor": {
+    "description": "一次重构代码的提交 (未改动任何功能且没有任何代码/逻辑错误)",
+    "title": "refactor（重构）"
+  },
+  "🍱 assets": {
+    "description": "增加/更新/移除静态资源文件",
+    "name": "assets（静态资源）"
+  },
+  "⚡️ perf": {
+    "description": "可以提高性能的提交",
+    "title": "Performance Improvements（性能优化）"
+  },
+  "✅ test": {
+    "description": "添加缺失测试或更正现有测试的提交",
+    "title": "Test Case（测试）"
+  },
+  "📦 dep-up": {
+    "description": "更新编译文件/引入的软件包/sdk等",
+    "name": "dep-up"
+  },
+  "🛠  build": {
+    "description": "影响构建系统或外部依赖项的更改提交 (例如: webpack, test, npm, 等等)",
+    "title": "Builds（构建）"
+  },
+  "🚀 deploy": {
+    "description": "部署东西",
+    "name": "deploy（部署）"
+  },
+  "✔️  compat": {
+    "description": "适配外部API更改的提交",
+    "name": "compat（调整兼容）"
+  },
+  "🚚 move": {
+    "description": "移动/重命名文件",
+    "name": "mv（调整文件）"
+  },
+  "👷 ci": {
+    "description": "CI配置文件和脚本的更改提交 (例如: jekends, git hooks, Travis, Circle, BrowserStack, SauceLabs, 等等)",
+    "title": "Continuous Integrations（持续集成流水线）"
+  },
+  "🐳 docker": {
+    "description": "Docker相关的改动",
+    "name": "docker（容器）"
+  },
+  "☸️  k8s": {
+    "description": "k8s相关的工作",
+    "name": "k8s"
+  },
+  "🖇  chore": {
+    "description": "其他不修改源代码或测试文件的更改提交",
+    "title": "Chores（其他）"
+  },
+  "⏪ revert": {
+    "description": "恢复以前的代码的更改提交",
+    "title": "Revert（恢复）"
+  },
+  "🔀 merge": {
+    "description": "合并分支",
+    "name": "merge（合并）"
+  },
+  "🎉 init": {
+    "description": "项目初始化提交",
+    "name": "init（初始化）"
+  },
+  "⬇️  downgrade": {
+    "description": "依赖降级",
+    "name": "downgrade（降级）"
+  },
+  "⬆️  upgrade": {
+    "description": "依赖升级",
+    "name": "upgrade（升级）"
+  },
+  "📌 pushin": {
+    "description": "锁定依赖版本",
+    "name": "pushpin（固定）"
+  },
+  "➕ dep-add": {
+    "description": "增加依赖",
+    "name": "dep-add（依赖）"
+  },
+  "➖ dep-rm": {
+    "description": "移除依赖",
+    "name": "dep-rm（依赖）"
+  },
+  "🌐 i18n": {
+    "description": "国际化/本地化语言支持",
+    "name": "i18n（国际化）"
+  },
+  "💬 texts": {
+    "description": "更新普通文本内容",
+    "name": "texts"
+  },
+  "🗃  db": {
+    "description": "执行与数据库相关的更改",
+    "name": "db"
+  },
+  "🔊 log-add": {
+    "description": "增加日志",
+    "name": "log-add"
+  },
+  "🔇 log-rm": {
+    "description": "删除日志",
+    "name": "log-rm"
+  },
+  "🏗  arch": {
+    "description": "架构变更",
+    "name": "arch"
+  },
+  "🤡 mock": {
+    "description": "模拟操作代码提交",
+    "name": "mock"
+  },
+  "🥚 egg": {
+    "description": "添加彩蛋",
+    "name": "egg"
+  },
+  "🙈 gitignore": {
+    "description": "添加/更新.gitignore",
+    "name": "gitignore"
+  },
+  "📸 snapshots": {
+    "description": "添加/更新快照",
+    "name": "snapshots"
+  },
+  "🔍 seo": {
+    "description": "SEO优化",
+    "name": "seo"
+  },
+  "🌱 seed": {
+    "description": "添加/更新seed文件",
+    "name": "seed"
+  },
+  "💫 animation": {
+    "description": "添加/更新动画或者过渡动画",
+    "name": "animation"
+  },
+  "💩 poo": {
+    "description": "写了屎一样的代码, 需要被吐槽",
+    "name": "poo（bad代码）"
+  },
+  "🍻 beer": {
+    "description": "醉代(醉后写代码, 要被优化的)",
+    "name": "beer（违规代码）"
+  }
+}
