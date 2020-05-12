@@ -41,7 +41,7 @@
 ```
 ### 环境变量 (Environment variables)
 
-下面的变量都可以用默认配置或者package.json的机车配置覆盖
+下面的变量都可以用默认配置或者package.json的`config.commitizen`配置覆盖
 
 * CZ_TYPE = defaultType
 * CZ_SCOPE = defaultScope
