@@ -36,7 +36,7 @@ var longIssues =
   'b b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b' +
   'b b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b' +
   'b b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b bb b';
-var breakingChange = 'BREAKING CHANGE: ';
+var breakingChange = '不兼容(重大)更新: ';
 var breaking = 'asdhdfkjhbakjdhjkashd adhfajkhs asdhkjdsh ahshd';
 var longIssuesSplit =
   longIssues.slice(0, defaultOptions.maxLineWidth).trim() +
@@ -249,8 +249,9 @@ describe('validation', function() {
         subject: longBody
       })
     ).to.throw(
-      'length must be less than or equal to ' +
-        `${defaultOptions.maxLineWidth - type.length - scope.length - 4}`
+      '描述必须小于等于' +
+      `${defaultOptions.maxLineWidth - type.length - scope.length - 4}个字符`
+      + `. 当前字符数为${longBody.length}个.`
     );
   });
   it('empty subject', function() {
@@ -260,7 +261,7 @@ describe('validation', function() {
         scope,
         subject: ''
       })
-    ).to.throw('subject is required');
+    ).to.throw('必须选项');
   });
 });
 
@@ -276,13 +277,15 @@ describe('defaults', function() {
   it('defaultScope default', function() {
     expect(questionDefault('scope')).to.be.undefined;
   });
-  it('defaultScope options', () =>
+  it('defaultScope options', () => {
     expect(
       questionDefault('scope', customOptions({ defaultScope: scope }))
-    ).to.equal(scope));
+    ).to.equal(scope)
+  });
 
-  it('defaultSubject default', () =>
-    expect(questionDefault('subject')).to.be.undefined);
+  it('defaultSubject default', () => {
+    expect(questionDefault('subject')).to.be.undefined
+  });
   it('defaultSubject options', function() {
     expect(
       questionDefault(
@@ -322,62 +325,71 @@ describe('defaults', function() {
 describe('prompts', function() {
   it('commit subject prompt for commit w/ out scope', function() {
     expect(questionPrompt('subject', { type })).to.contain(
-      `(max ${defaultOptions.maxHeaderWidth - type.length - 2} chars)`
+      `(最多${defaultOptions.maxHeaderWidth - type.length - 2}个字符)`
     );
   });
   it('commit subject prompt for commit w/ scope', function() {
     expect(questionPrompt('subject', { type, scope })).to.contain(
-      `(max ${defaultOptions.maxHeaderWidth -
+      `(最多${defaultOptions.maxHeaderWidth -
         type.length -
         scope.length -
-        4} chars)`
+        4}个字符)`
     );
   });
 });
 
 describe('transformation', function() {
-  it('subject w/ character count', () =>
+  it('subject w/ character count', () => {
     expect(
       questionTransformation('subject', {
         type,
         subject
       })
-    ).to.equal(chalk.green(`(${subject.length}) ${subject}`)));
-  it('long subject w/ character count', () =>
+    ).to.equal(chalk.green(`(${subject.length}) ${subject}`));
+  })
+
+  it('long subject w/ character count', () => {
     expect(
       questionTransformation('subject', {
         type,
         subject: longBody
       })
-    ).to.equal(chalk.red(`(${longBody.length}) ${longBody}`)));
+    ).to.equal(chalk.red(`(${longBody.length}) ${longBody}`))
+  });
 });
 
 describe('filter', function() {
-  it('lowercase scope', () =>
-    expect(questionFilter('scope', 'HelloMatt')).to.equal('hellomatt'));
-  it('lowerfirst subject trimmed and trailing dots striped', () =>
+  it('lowercase scope', () => {
+    expect(questionFilter('scope', 'HelloMatt')).to.equal('hellomatt')
+  });
+  it('lowerfirst subject trimmed and trailing dots striped', () => {
     expect(questionFilter('subject', '  A subject...  ')).to.equal(
       'a subject'
-    ));
+    )
+  });
 });
 
 describe('when', function() {
-  it('breaking by default', () =>
-    expect(questionWhen('breaking', {})).to.be.undefined);
-  it('breaking when isBreaking', () =>
+  it('breaking by default', () => {
+    expect(questionWhen('breaking', {})).to.be.undefined;
+  });
+  it('breaking when isBreaking', () => {
     expect(
       questionWhen('breaking', {
         isBreaking: true
       })
-    ).to.be.true);
-  it('issues by default', () =>
-    expect(questionWhen('issues', {})).to.be.undefined);
-  it('issues when isIssueAffected', () =>
+    ).to.be.true
+  });
+  it('issues by default', () => {
+    expect(questionWhen('issues', {})).to.be.undefined
+  });
+  it('issues when isIssueAffected', () => {
     expect(
       questionWhen('issues', {
         isIssueAffected: true
       })
-    ).to.be.true);
+    ).to.be.true
+  });
 });
 
 describe('commitlint config header-max-length', function() {
@@ -405,7 +417,7 @@ describe('commitlint config header-max-length', function() {
         });
       }
 
-      mock.reRequire('./index');
+      mock.reRequire('./index')
       try {
         return mock
           .reRequire('@commitlint/load')()

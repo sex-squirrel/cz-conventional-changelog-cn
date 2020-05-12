@@ -53,3 +53,33 @@
 ### Commitlint
 
 如果使用了[commitlint](https://github.com/conventional-changelog/commitlint), "maxHeaderWidth"配置属性将默认为"header-max-length"的值, 而不是100. 可以通过设置配置的'maxHeaderWidth'字段或者环境变量CZ_MAX_HEADER_WIDTH重置.
+
+### 自定义配置(可重写默认配置)
+
+在项目的根目录提供`cz.commitlog.config.js`可以修改或重写提交流程
+```js
+module.exports = function(questions) {
+  // ...
+  return questions;
+}
+```
+具体的规则参考[Inquirer](https://github.com/SBoudrias/Inquirer.js#readme)
+
+
+根目录下提供`cz.committypes.config.js`可以修改或者重写提交类型的模板
+
+```js
+module.exports = function(types) {
+  // ...
+  return types;
+}
+```
+格式如下
+```json5
+{
+  "key": {
+    "description": "这是描述",
+    "name": "这是name"
+  }
+}
+```

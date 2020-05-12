@@ -35,7 +35,7 @@ module.exports = function(options) {
         // Apply breaking change prefix, removing it if already present
         let breaking = answers.breaking ? answers.breaking.trim() : '';
         breaking = breaking
-          ? '不兼容(重大)更新: ' + breaking.replace(/^BREAKING CHANGE: /, '')
+          ? '不兼容(重大)更新: ' + breaking.replace(/^不兼容\(重大\)更新: /, '')
           : '';
         breaking = breaking ? wrap(breaking, wrapOptions) : false;
 
